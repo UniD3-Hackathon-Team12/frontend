@@ -44,6 +44,7 @@
             <connections>
                 <outlet property="symbolImg" destination="deS-0r-cJd" id="ojC-CI-KXA"/>
                 <outlet property="textInfo" destination="Ebo-JH-K8b" id="5q8-3t-NKq"/>
+                <outlet property="view" destination="H2p-sc-9uM" id="fA3-tH-sgC"/>
             </connections>
             <point key="canvasLocation" x="164.12213740458014" y="28.169014084507044"/>
         </tableViewCell>

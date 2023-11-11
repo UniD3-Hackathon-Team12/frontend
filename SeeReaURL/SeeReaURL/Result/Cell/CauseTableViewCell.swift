@@ -18,8 +18,7 @@ struct CauseDataModel{
 class CauseTableViewCell: UITableViewCell {
     
     static let identifier = "CauseTableViewCell"
-    
-    
+        
     @IBOutlet weak var textInfo: UILabel!
     @IBOutlet weak var symbolImg: UIImageView!
     
@@ -44,6 +43,12 @@ class CauseTableViewCell: UITableViewCell {
         symbolImg.image = causeData.symbolImage
         textInfo.text = causeData.causeTitle
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        // Cell 간격 조정
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6))
+      }
     
 }
 

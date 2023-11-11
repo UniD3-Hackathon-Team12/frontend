@@ -11,6 +11,9 @@ class NQualifiedResultViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var box: UIView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +24,8 @@ class NQualifiedResultViewController: UIViewController {
         // 프로토콜 등록
         tableView.delegate = self
         tableView.dataSource = self
+        
+        box.layer.cornerRadius = 10
     }
     
     // 결과 제목
