@@ -7,6 +7,14 @@
 
 import UIKit
 
+struct CauseDataModel{
+    let symbolImageName: String
+    var symbolImage: UIImage? {
+        return UIImage(named: symbolImageName)
+    }
+    let causeTitle: String
+}
+
 class CauseTableViewCell: UITableViewCell {
     
     static let identifier = "CauseTableViewCell"
@@ -26,9 +34,17 @@ class CauseTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-//    func setData(_ causeData: CauseDataModel){
-//        symbolImg.image = causeData.symbolImage
-//        textInfo.text = causeData.causeTitle
-//    }
+    func setData(_ causeData: CauseDataModel){
+        symbolImg.image = causeData.symbolImage
+        textInfo.text = causeData.causeTitle
+    }
     
+}
+
+extension CauseDataModel{
+    static let sampleData: [CauseDataModel] = [
+        CauseDataModel(symbolImageName: "exclamationmark.shield.fill", causeTitle: "실제 링크를 숨겼습니다"),
+        CauseDataModel(symbolImageName: "message.fill", causeTitle: "공식 카카오 오픈채팅방 링크가 아닙니다"),
+        CauseDataModel(symbolImageName: "light.beacon.min.fill", causeTitle: "위험신고가 누적된 링크입니다")
+    ]
 }
