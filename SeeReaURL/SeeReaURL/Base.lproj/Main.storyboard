@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fPj-PK-qiq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
@@ -17,32 +17,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="확인하고 싶은 링크를 입력하세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DoI-3E-FPa">
-                                <rect key="frame" x="30" y="159.33333333333334" width="193.66666666666666" height="18"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                <color key="textColor" name="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="See reaURL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Acs-h0-vR1">
                                 <rect key="frame" x="29.999999999999993" y="59.000000000000007" width="89.333333333333314" height="20.333333333333336"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" name="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최근 신고된 링크" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KHe-5v-OhN">
-                                <rect key="frame" x="30" y="257.33333333333331" width="99" height="18"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="f6U-o9-oV0">
+                                <rect key="frame" x="99" y="104.33333333333333" width="195" height="31.999999999999986"/>
+                                <color key="backgroundColor" name="boxColor"/>
+                                <segments>
+                                    <segment title="URL 확인"/>
+                                    <segment title="SNS 계정 확인"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="inI-Ru-mb6"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="입력하세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DoI-3E-FPa">
+                                <rect key="frame" x="30" y="159.33333333333334" width="65" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" name="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jhc-uX-ksm">
-                                <rect key="frame" x="30" y="285.33333333333331" width="333" height="522.66666666666674"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </tableView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="EUs-mo-7vT">
                                 <rect key="frame" x="30" y="187.33333333333334" width="333" height="40"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="https://fake-url.com" textAlignment="natural" minimumFontSize="14" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dxA-Bo-Q2Q">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="https://naver.com" textAlignment="natural" minimumFontSize="14" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dxA-Bo-Q2Q">
                                         <rect key="frame" x="0.0" y="0.0" width="269.33333333333331" height="40"/>
                                         <color key="backgroundColor" name="boxColor"/>
                                         <color key="tintColor" name="pointColor"/>
@@ -70,17 +71,31 @@
                                     <constraint firstAttribute="height" constant="40" id="QSf-YB-syx"/>
                                 </constraints>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최근 신고된 링크" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KHe-5v-OhN">
+                                <rect key="frame" x="30" y="257.33333333333331" width="99" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" name="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="jhc-uX-ksm">
+                                <rect key="frame" x="30" y="285.33333333333331" width="333" height="522.66666666666674"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="522.66666666666652" id="Ayo-8L-WHs"/>
+                                </constraints>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="backgroundColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EUs-mo-7vT" secondAttribute="trailing" constant="30" id="1dA-U3-p40"/>
                             <constraint firstItem="KHe-5v-OhN" firstAttribute="top" secondItem="EUs-mo-7vT" secondAttribute="bottom" constant="30" id="8DC-GK-vWZ"/>
+                            <constraint firstItem="EUs-mo-7vT" firstAttribute="centerX" secondItem="f6U-o9-oV0" secondAttribute="centerX" id="Cl8-fc-n8v"/>
                             <constraint firstItem="jhc-uX-ksm" firstAttribute="top" secondItem="KHe-5v-OhN" secondAttribute="bottom" constant="10" id="NMd-v4-jg5"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="jhc-uX-ksm" secondAttribute="bottom" constant="10" id="Ovg-yH-8Wt"/>
                             <constraint firstItem="KHe-5v-OhN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="QjF-yA-cgZ"/>
-                            <constraint firstItem="DoI-3E-FPa" firstAttribute="top" secondItem="Acs-h0-vR1" secondAttribute="bottom" constant="80" id="aFb-Vs-GD9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jhc-uX-ksm" secondAttribute="trailing" constant="30" id="avI-Sx-g3y"/>
+                            <constraint firstItem="DoI-3E-FPa" firstAttribute="top" secondItem="f6U-o9-oV0" secondAttribute="bottom" constant="24" id="dm3-DL-p6R"/>
                             <constraint firstItem="Acs-h0-vR1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="gDp-bG-pl0"/>
                             <constraint firstItem="Acs-h0-vR1" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="j8c-Ov-FFP"/>
                             <constraint firstItem="EUs-mo-7vT" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="j9o-4P-U1p"/>
@@ -91,7 +106,9 @@
                     </view>
                     <connections>
                         <outlet property="searchButton" destination="oTe-10-QUI" id="J85-T3-tSb"/>
+                        <outlet property="segmentedControl" destination="f6U-o9-oV0" id="5Yr-ZE-Thx"/>
                         <outlet property="textField" destination="dxA-Bo-Q2Q" id="fYV-wd-JVY"/>
+                        <outlet property="typeLabel" destination="DoI-3E-FPa" id="SFo-Fr-5id"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -127,15 +144,12 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="링크 이동 시 추가 위험의 가능성이 있어요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCh-Bl-LEH">
                                 <rect key="frame" x="29.999999999999986" y="311.33333333333331" width="244.66666666666663" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-
-
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jYu-i2-dNE">
                                 <rect key="frame" x="20" y="344.33333333333331" width="353" height="130"/>
                                 <subviews>
@@ -211,7 +225,6 @@
                             <constraint firstItem="RB5-Ut-cMV" firstAttribute="top" secondItem="9JI-SV-8eR" secondAttribute="top" id="T8B-aK-Mo4"/>
                             <constraint firstItem="RB5-Ut-cMV" firstAttribute="leading" secondItem="9JI-SV-8eR" secondAttribute="leading" constant="30" id="X9s-Dh-v1S"/>
                             <constraint firstItem="iK0-JN-X8s" firstAttribute="centerX" secondItem="tVv-TF-S9x" secondAttribute="centerX" id="aZX-t5-4UU"/>
-
                             <constraint firstItem="DRA-Xf-N22" firstAttribute="centerX" secondItem="tVv-TF-S9x" secondAttribute="centerX" id="eoB-SP-E2p"/>
                             <constraint firstItem="iK0-JN-X8s" firstAttribute="top" secondItem="RB5-Ut-cMV" secondAttribute="bottom" constant="30" id="gwJ-5M-xGG"/>
                             <constraint firstItem="FKD-is-vYG" firstAttribute="top" secondItem="jYu-i2-dNE" secondAttribute="bottom" constant="20" id="n1w-Kl-Fxa"/>
@@ -341,7 +354,6 @@
         </scene>
     </scenes>
     <resources>
-
         <image name="doc.on.doc.fill" catalog="system" width="112" height="128"/>
         <image name="exclamationmark.bubble" catalog="system" width="128" height="110"/>
         <image name="link.circle.fill" catalog="system" width="128" height="123"/>
@@ -357,7 +369,6 @@
         <namedColor name="textColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

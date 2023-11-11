@@ -8,15 +8,29 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setTextFieldStyle()
-        
     }
+
+    @IBAction func segValueChanged(_ sender: Any) {
+        switch segmentedControl.selectedSegmentIndex {
+        case 0:
+            typeLabel.text = "확인하고 싶은 링크를 입력하세요"
+            textField.placeholder = "https://fake.com"
+        case 1:
+            typeLabel.text = "확인하고 싶은 계정 이름을 입력하세요"
+            textField.placeholder = "blackpinkofficial"
+        default:
+            break
+        }
+    }
+    
     
     func setTextFieldStyle() {
         textField.borderStyle = .roundedRect
@@ -24,6 +38,7 @@ class HomeViewController: UIViewController {
         textField.layer.cornerRadius = 10
         textField.layer.borderWidth = 1.0
     }
+    
     
     @IBAction func searchButtonClicked(_ sender: UIButton) {
         if textField.text != nil {
