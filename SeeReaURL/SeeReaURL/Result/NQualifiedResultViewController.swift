@@ -25,8 +25,7 @@ class NQualifiedResultViewController: UIViewController {
         tableView.dataSource = self
         
         box.layer.cornerRadius = 10
-        
-        tableView.sectionHeaderTopPadding = 10
+    
     }
     
     // 결과 제목
@@ -59,7 +58,7 @@ class NQualifiedResultViewController: UIViewController {
             actionSheet.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
             
             self.present(actionSheet, animated: true, completion: nil)
-    }    
+    }
 
 }
 

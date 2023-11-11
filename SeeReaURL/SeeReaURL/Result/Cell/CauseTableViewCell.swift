@@ -10,7 +10,7 @@ import UIKit
 struct CauseDataModel{
     let symbolImageName: String
     var symbolImage: UIImage? {
-        return UIImage(named: symbolImageName)
+        return UIImage(systemName: symbolImageName)
     }
     let causeTitle: String
 }
@@ -21,7 +21,6 @@ class CauseTableViewCell: UITableViewCell {
         
     @IBOutlet weak var textInfo: UILabel!
     @IBOutlet weak var symbolImg: UIImageView!
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
