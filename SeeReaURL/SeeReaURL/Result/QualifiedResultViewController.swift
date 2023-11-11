@@ -13,6 +13,8 @@ class QualifiedResultViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var pageControl: UIPageControl!
     @IBOutlet weak var linkview: UIView!
     @IBOutlet weak var copyBtn: UIButton!
+    @IBOutlet weak var linkURL: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,14 +25,17 @@ class QualifiedResultViewController: UIViewController, UIScrollViewDelegate {
 
         self.linkview.layer.cornerRadius = 10
         self.scrollView.layer.cornerRadius = 10
-        // Do any additional setup after loading the view.
+        
+        // 링크 보여주기
+        linkURL.text = "주소 변수"
+        
+        
     }
 
     // 결과 제목
     
     // Remember! 경고 문구
     
-    // 링크 보여주기
     
     // 버튼1 : 링크 이동
     
