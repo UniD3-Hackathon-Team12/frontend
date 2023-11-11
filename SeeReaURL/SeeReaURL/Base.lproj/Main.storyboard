@@ -30,13 +30,57 @@
                     <view key="view" contentMode="scaleToFill" id="tVv-TF-S9x">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="See ReaURL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RB5-Ut-cMV">
+                                <rect key="frame" x="30" y="59" width="99" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iK0-JN-X8s">
+                                <rect key="frame" x="84.333333333333329" y="110.00000000000001" width="224.33333333333337" height="143.33333333333337"/>
+                                <string key="text">위험 요소가 
+감지되지 않은 
+링크입니다</string>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9e-Lg-LSg">
+                                <rect key="frame" x="30" y="283.33333333333331" width="95" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="링크 이동 시 추가 위험의 가능성이 있어요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCh-Bl-LEH">
+                                <rect key="frame" x="30" y="311.33333333333331" width="249" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jYu-i2-dNE">
+                                <rect key="frame" x="76" y="351" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="9JI-SV-8eR"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ZCh-Bl-LEH" firstAttribute="top" secondItem="c9e-Lg-LSg" secondAttribute="bottom" constant="7" id="5dH-BK-ei8"/>
+                            <constraint firstItem="c9e-Lg-LSg" firstAttribute="leading" secondItem="9JI-SV-8eR" secondAttribute="leading" constant="30" id="Pxj-VC-vdD"/>
+                            <constraint firstItem="RB5-Ut-cMV" firstAttribute="top" secondItem="9JI-SV-8eR" secondAttribute="top" id="T8B-aK-Mo4"/>
+                            <constraint firstItem="RB5-Ut-cMV" firstAttribute="leading" secondItem="9JI-SV-8eR" secondAttribute="leading" constant="30" id="X9s-Dh-v1S"/>
+                            <constraint firstItem="iK0-JN-X8s" firstAttribute="centerX" secondItem="tVv-TF-S9x" secondAttribute="centerX" id="aZX-t5-4UU"/>
+                            <constraint firstItem="iK0-JN-X8s" firstAttribute="top" secondItem="RB5-Ut-cMV" secondAttribute="bottom" constant="30" id="gwJ-5M-xGG"/>
+                            <constraint firstItem="ZCh-Bl-LEH" firstAttribute="leading" secondItem="9JI-SV-8eR" secondAttribute="leading" constant="30" id="sUP-E9-FdC"/>
+                            <constraint firstItem="c9e-Lg-LSg" firstAttribute="top" secondItem="iK0-JN-X8s" secondAttribute="bottom" constant="30" id="vk9-ac-alt"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3l8-6H-IRu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="215" y="801"/>
+            <point key="canvasLocation" x="214.50381679389312" y="800.70422535211276"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="H5d-mI-rOp">
