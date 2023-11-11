@@ -153,16 +153,107 @@
             </objects>
             <point key="canvasLocation" x="214.50381679389312" y="800.70422535211276"/>
         </scene>
-        <!--View Controller-->
+        <!--Qualified Result View Controller-->
         <scene sceneID="H5d-mI-rOp">
             <objects>
-                <viewController id="fPj-PK-qiq" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NQualifiedResultVC" id="fPj-PK-qiq" customClass="NQualifiedResultViewController" customModule="SeeReaURL" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BtS-od-7DP">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="See ReaURL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aLK-gV-yIL">
+                                <rect key="frame" x="30" y="59" width="99" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XxU-CX-BGQ">
+                                <rect key="frame" x="75.333333333333329" y="110" width="242.33333333333337" height="95.666666666666686"/>
+                                <string key="text">위험 요소가 
+감지되었습니다</string>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="98%의 확률로 위험한 접근입니다" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5W-oK-wxr">
+                                <rect key="frame" x="0.0" y="225.66666666666666" width="393" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LlK-Dw-JH1">
+                                <rect key="frame" x="30.000000000000004" y="423.66666666666669" width="57.333333333333343" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="감지된 위험 요소를 확인하세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQq-Zj-M5x">
+                                <rect key="frame" x="30" y="451.66666666666669" width="180.66666666666666" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hLB-Ia-Rka">
+                                <rect key="frame" x="20" y="484.66666666666674" width="353" height="333.33333333333326"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vw0-9A-ARn">
+                                <rect key="frame" x="20" y="273.66666666666669" width="353" height="130"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="링크 주소" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LSp-JN-ZkI">
+                                        <rect key="frame" x="43" y="47" width="64" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FW3-io-gZm">
+                                        <rect key="frame" x="239" y="85" width="109" height="35"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="exclamationmark.bubble" catalog="system" title=" 신고하기">
+                                            <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
+                                            <color key="baseForegroundColor" name="pointColor"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" name="boxColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="FW3-io-gZm" secondAttribute="trailing" constant="5" id="3NO-kg-fvF"/>
+                                    <constraint firstAttribute="height" constant="130" id="4e2-X4-lyM"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="130" id="SwS-dl-Rv7"/>
+                                    <constraint firstAttribute="bottom" secondItem="FW3-io-gZm" secondAttribute="bottom" constant="10" id="WEp-Df-zRs"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Vhq-Of-v3t"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="backgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LlK-Dw-JH1" firstAttribute="leading" secondItem="Vhq-Of-v3t" secondAttribute="leading" constant="30" id="2uq-rp-THK"/>
+                            <constraint firstItem="n5W-oK-wxr" firstAttribute="leading" secondItem="Vhq-Of-v3t" secondAttribute="leading" id="8dk-kj-62W"/>
+                            <constraint firstItem="Vhq-Of-v3t" firstAttribute="bottom" secondItem="hLB-Ia-Rka" secondAttribute="bottom" id="Bnp-fV-ZXM"/>
+                            <constraint firstItem="XxU-CX-BGQ" firstAttribute="top" secondItem="aLK-gV-yIL" secondAttribute="bottom" constant="30" id="Cfc-VD-P8d"/>
+                            <constraint firstItem="XxU-CX-BGQ" firstAttribute="top" secondItem="aLK-gV-yIL" secondAttribute="bottom" constant="30" id="GDU-EL-Qpd"/>
+                            <constraint firstItem="hLB-Ia-Rka" firstAttribute="leading" secondItem="Vhq-Of-v3t" secondAttribute="leading" constant="20" id="IM5-nu-ORS"/>
+                            <constraint firstItem="EQq-Zj-M5x" firstAttribute="top" secondItem="LlK-Dw-JH1" secondAttribute="bottom" constant="7" id="S1m-Bm-lus"/>
+                            <constraint firstItem="EQq-Zj-M5x" firstAttribute="top" secondItem="LlK-Dw-JH1" secondAttribute="bottom" constant="7" id="VrC-1Z-dUE"/>
+                            <constraint firstItem="aLK-gV-yIL" firstAttribute="leading" secondItem="Vhq-Of-v3t" secondAttribute="leading" constant="30" id="XCY-7G-caU"/>
+                            <constraint firstItem="EQq-Zj-M5x" firstAttribute="leading" secondItem="Vhq-Of-v3t" secondAttribute="leading" constant="30" id="XZ6-xl-dRE"/>
+                            <constraint firstItem="hLB-Ia-Rka" firstAttribute="top" secondItem="EQq-Zj-M5x" secondAttribute="bottom" constant="15" id="e5L-L1-ogo"/>
+                            <constraint firstItem="aLK-gV-yIL" firstAttribute="top" secondItem="Vhq-Of-v3t" secondAttribute="top" id="etm-vt-VOa"/>
+                            <constraint firstItem="n5W-oK-wxr" firstAttribute="top" secondItem="XxU-CX-BGQ" secondAttribute="bottom" constant="20" id="fii-zH-Ixk"/>
+                            <constraint firstItem="Vhq-Of-v3t" firstAttribute="trailing" secondItem="n5W-oK-wxr" secondAttribute="trailing" id="ga0-Eh-NIf"/>
+                            <constraint firstItem="LlK-Dw-JH1" firstAttribute="top" secondItem="Vw0-9A-ARn" secondAttribute="bottom" constant="20" id="jQB-vb-QlM"/>
+                            <constraint firstItem="n5W-oK-wxr" firstAttribute="centerX" secondItem="BtS-od-7DP" secondAttribute="centerX" id="jpC-QA-AB6"/>
+                            <constraint firstItem="Vhq-Of-v3t" firstAttribute="trailing" secondItem="hLB-Ia-Rka" secondAttribute="trailing" constant="20" id="ofH-jD-9UG"/>
+                            <constraint firstItem="Vw0-9A-ARn" firstAttribute="top" secondItem="n5W-oK-wxr" secondAttribute="bottom" constant="30" id="p3k-13-agg"/>
+                            <constraint firstItem="XxU-CX-BGQ" firstAttribute="centerX" secondItem="BtS-od-7DP" secondAttribute="centerX" id="uLK-P9-43V"/>
+                            <constraint firstItem="Vw0-9A-ARn" firstAttribute="leading" secondItem="Vhq-Of-v3t" secondAttribute="leading" constant="20" id="x2I-cT-8cN"/>
+                            <constraint firstItem="Vhq-Of-v3t" firstAttribute="trailing" secondItem="Vw0-9A-ARn" secondAttribute="trailing" constant="20" id="xyg-oT-PUh"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="hLB-Ia-Rka" id="MBe-YJ-elI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xta-qa-k24" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -186,7 +277,11 @@
     </scenes>
     <resources>
         <image name="doc.on.doc.fill" catalog="system" width="112" height="128"/>
+        <image name="exclamationmark.bubble" catalog="system" width="128" height="110"/>
         <image name="link.circle.fill" catalog="system" width="128" height="123"/>
+        <namedColor name="backgroundColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="boxColor">
             <color red="0.17254901960784313" green="0.17254901960784313" blue="0.1803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
