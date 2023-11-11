@@ -9,31 +9,31 @@ import Foundation
 import Moya
 
 enum APIService {
-	case getExamination(parameter: [String: Any])
+	case getMainResult(parameter: [String: Any])
 }
 
 extension APIService: TargetType {
 	var baseURL: URL {
-		return URL(string: "baseURL")!
+		return URL(string: "http://172.20.10.4:8080/")!
 	}
 	
 	var path: String {
 		switch self {
-		case .getExamination:
-			return "/path"
+		case .getMainResult:
+			return "fraud/checkUrl"
 		}
 	}
 	
 	var method: Moya.Method {
 		switch self {
-		case .getExamination:
+		case .getMainResult:
 			return .get
 		}
 	}
 	
 	var task: Moya.Task {
 		switch self{
-		case .getExamination(let parameter):
+		case .getMainResult(let parameter):
 			return .requestParameters(parameters: parameter, encoding: URLEncoding.queryString)
 		}
 	}

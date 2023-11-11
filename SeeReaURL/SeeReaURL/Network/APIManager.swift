@@ -10,7 +10,7 @@ import Moya
 
 protocol APIManager {
 	
-	func checkURL() async throws -> ExamResponse
+	func checkURL(url: String) async throws -> ExamResponse
 	
 }
 
@@ -18,13 +18,27 @@ final class DefaultAPIManager: APIManager {
 	
 	init() { }
 	
-	func checkURL() async throws -> ExamResponse {
-		let request: [String: Any] = try ExamRequest(url: "검사하고 싶은 URL").asDictionary()
-		
+	func checkURL(url: String) async throws -> ExamResponse {
+		let request: [String: Any] = try ExamRequest(url: url).asDictionary()
 		let response = try await APIService.request(
-			target: APIService.getExamination(parameter: request),
+			target: APIService.getMainResult(parameter: request),
 			dataType: ExamResponse.self)
-		
-	return ExamResponse(isSafe: false)
+		return response
 	}
 }
+
+//사용법
+//let apiManager = DefaultAPIManager()
+//
+//func fetchURLSafeData(url: String) {
+//	Task {
+//		do {
+//			let response = try await apiManager.checkURL(url: String)
+//			print("response : -------")
+//			print("dddd : \(response)")
+//			print("----------------------------------")
+//		} catch {
+//			
+//		}
+//	}
+//}

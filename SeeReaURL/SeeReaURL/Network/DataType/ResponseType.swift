@@ -8,5 +8,5 @@
 import Foundation
 
 struct ExamResponse: Codable {
-	var isSafe: Bool?
+	var fraudPossibility: String?
 }
