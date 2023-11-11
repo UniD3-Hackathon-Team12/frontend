@@ -149,7 +149,7 @@
 			children = (
 				07DEA9D92AFFA9300039CE3A /* APIManager.swift */,
 				07DEAA0B2AFFCA9E0039CE3A /* Extension */,
-				07DEAA062AFFC9CB0039CE3A /* DataType */,
+				07DEAA062AFFC9CB0039CE3A /* DataTypeNetWork */,
 				07DEAA002AFFC3C80039CE3A /* APIService.swift */,
 				07DEAA042AFFC7EB0039CE3A /* MoyaCacheablePlugin.swift */,
 			);
@@ -185,13 +185,13 @@
 			path = ShareExtension;
 			sourceTree = "<group>";
 		};
-		07DEAA062AFFC9CB0039CE3A /* DataType */ = {
+		07DEAA062AFFC9CB0039CE3A /* DataTypeNetWork */ = {
 			isa = PBXGroup;
 			children = (
 				07DEAA072AFFC9DC0039CE3A /* RequestType.swift */,
 				07DEAA092AFFC9E60039CE3A /* ResponseType.swift */,
 			);
-			path = DataType;
+			path = DataTypeNetWork;
 			sourceTree = "<group>";
 		};
 		07DEAA0B2AFFCA9E0039CE3A /* Extension */ = {
