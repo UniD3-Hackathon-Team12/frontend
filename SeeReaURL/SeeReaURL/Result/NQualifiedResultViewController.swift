@@ -34,7 +34,9 @@ class NQualifiedResultViewController: UIViewController {
 
 }
 
-extension NQualifiedResultViewController: UITableViewDelegate{}
+extension NQualifiedResultViewController: UITableViewDelegate{
+    
+}
 
 extension NQualifiedResultViewController: UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
