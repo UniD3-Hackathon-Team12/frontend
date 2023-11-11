@@ -11,7 +11,7 @@ class NQualifiedResultViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var box: UIView!
-    
+    @IBOutlet weak var linkURL: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +25,8 @@ class NQualifiedResultViewController: UIViewController {
         tableView.dataSource = self
         
         box.layer.cornerRadius = 10
+        
+        linkURL.text = "주소 변수"
     
     }
     

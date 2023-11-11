@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fxU-cI-Mly">
-
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
@@ -158,9 +157,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jYu-i2-dNE">
                                 <rect key="frame" x="20" y="344.33333333333331" width="353" height="130"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="링크 주소" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yD0-VE-UKb">
-                                        <rect key="frame" x="43" y="47" width="64" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="www.naver.comwww.naver.comwww.naver.comwww.naver.comwww.naver.comwww.naver.comwww.naver.comwww.naver.com" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yD0-VE-UKb">
+                                        <rect key="frame" x="10" y="10" width="333" height="80"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -195,11 +193,15 @@
                                 </subviews>
                                 <color key="backgroundColor" name="boxColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="yD0-VE-UKb" secondAttribute="trailing" constant="10" id="J0R-cs-7TE"/>
                                     <constraint firstAttribute="trailing" secondItem="bi3-9R-c2U" secondAttribute="trailing" constant="10" id="LpQ-V4-jy2"/>
                                     <constraint firstAttribute="bottom" secondItem="bi3-9R-c2U" secondAttribute="bottom" constant="18" id="Sr4-hj-XzW"/>
+                                    <constraint firstItem="yD0-VE-UKb" firstAttribute="leading" secondItem="jYu-i2-dNE" secondAttribute="leading" constant="10" id="WYa-lh-MIk"/>
                                     <constraint firstItem="lWL-bg-KHk" firstAttribute="centerY" secondItem="bi3-9R-c2U" secondAttribute="centerY" id="Yi6-9O-OrW"/>
                                     <constraint firstItem="bi3-9R-c2U" firstAttribute="leading" secondItem="lWL-bg-KHk" secondAttribute="trailing" constant="12" id="gBP-jU-fO4"/>
                                     <constraint firstAttribute="height" constant="130" id="ma8-Kw-WyY"/>
+                                    <constraint firstItem="yD0-VE-UKb" firstAttribute="top" secondItem="jYu-i2-dNE" secondAttribute="top" constant="10" id="tPz-ed-bEK"/>
+                                    <constraint firstItem="lWL-bg-KHk" firstAttribute="top" secondItem="yD0-VE-UKb" secondAttribute="bottom" id="ynO-ti-3Qw"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FKD-is-vYG">
@@ -248,6 +250,7 @@
                     </view>
                     <connections>
                         <outlet property="copyBtn" destination="jYu-i2-dNE" id="WZB-AR-Rg8"/>
+                        <outlet property="linkURL" destination="yD0-VE-UKb" id="dQ3-mu-arz"/>
                         <outlet property="linkview" destination="jYu-i2-dNE" id="Orz-AU-zEH"/>
                         <outlet property="pageControl" destination="DRA-Xf-N22" id="n0a-ip-YL9"/>
                         <outlet property="scrollView" destination="Gro-CD-vLI" id="vjA-UY-qwL"/>
@@ -305,9 +308,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vw0-9A-ARn">
                                 <rect key="frame" x="20" y="273.66666666666669" width="353" height="130"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="링크 주소" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LSp-JN-ZkI">
-                                        <rect key="frame" x="43" y="47" width="64" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="linkURLlinkURLlinkURLlinkURLlinkURLlinkURLlinkURLlinkURLlinkURLlinkURLlinkURLlinkURLlinkURLlinkURLlinkURLlinkURLlinkURLlinkU" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LSp-JN-ZkI">
+                                        <rect key="frame" x="10" y="10" width="333" height="110"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -328,8 +330,12 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="FW3-io-gZm" secondAttribute="trailing" constant="5" id="3NO-kg-fvF"/>
                                     <constraint firstAttribute="height" constant="130" id="4e2-X4-lyM"/>
+                                    <constraint firstItem="LSp-JN-ZkI" firstAttribute="leading" secondItem="Vw0-9A-ARn" secondAttribute="leading" constant="10" id="A5p-Bn-OAH"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="130" id="SwS-dl-Rv7"/>
                                     <constraint firstAttribute="bottom" secondItem="FW3-io-gZm" secondAttribute="bottom" constant="10" id="WEp-Df-zRs"/>
+                                    <constraint firstItem="LSp-JN-ZkI" firstAttribute="top" secondItem="Vw0-9A-ARn" secondAttribute="top" constant="10" id="gp9-cz-7ej"/>
+                                    <constraint firstAttribute="bottom" secondItem="LSp-JN-ZkI" secondAttribute="bottom" constant="10" id="n4N-VG-NSH"/>
+                                    <constraint firstAttribute="trailing" secondItem="LSp-JN-ZkI" secondAttribute="trailing" constant="10" id="tNW-7k-Neq"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -361,6 +367,7 @@
                     </view>
                     <connections>
                         <outlet property="box" destination="Vw0-9A-ARn" id="TTS-Er-zyL"/>
+                        <outlet property="linkURL" destination="LSp-JN-ZkI" id="yO1-D8-z46"/>
                         <outlet property="tableView" destination="hLB-Ia-Rka" id="MBe-YJ-elI"/>
                     </connections>
                 </viewController>
@@ -370,9 +377,7 @@
         </scene>
     </scenes>
     <resources>
-
         <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
-
         <image name="doc.on.doc.fill" catalog="system" width="112" height="128"/>
         <image name="exclamationmark.bubble" catalog="system" width="128" height="110"/>
         <image name="link.circle.fill" catalog="system" width="128" height="123"/>
