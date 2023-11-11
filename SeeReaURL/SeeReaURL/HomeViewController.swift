@@ -23,6 +23,9 @@ class HomeViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        // 네비게이션 바 해제
+        self.navigationController?.navigationBar.isHidden = true;
     }
 
     @IBAction func segValueChanged(_ sender: Any) {
