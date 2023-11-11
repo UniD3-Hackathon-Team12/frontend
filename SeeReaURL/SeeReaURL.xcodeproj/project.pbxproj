@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07201C462AFFF5C900C0EDBC /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07201C452AFFF5C900C0EDBC /* APIManager.swift */; };
+		07201C482AFFF5E200C0EDBC /* Encodable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07201C472AFFF5E200C0EDBC /* Encodable+.swift */; };
+		07201C4C2AFFF61300C0EDBC /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07201C4B2AFFF61300C0EDBC /* RequestType.swift */; };
+		07201C4E2AFFF61E00C0EDBC /* ResponseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07201C4D2AFFF61E00C0EDBC /* ResponseType.swift */; };
+		07201C502AFFF62D00C0EDBC /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07201C4F2AFFF62D00C0EDBC /* APIService.swift */; };
+		07201C522AFFF63F00C0EDBC /* MoyaCacheablePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07201C512AFFF63F00C0EDBC /* MoyaCacheablePlugin.swift */; };
+		07201C552AFFF8B100C0EDBC /* CombineMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 07201C542AFFF8B100C0EDBC /* CombineMoya */; };
+		07201C572AFFF8B100C0EDBC /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 07201C562AFFF8B100C0EDBC /* Moya */; };
+		07201C592AFFF8B100C0EDBC /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 07201C582AFFF8B100C0EDBC /* ReactiveMoya */; };
+		07201C5B2AFFF8B100C0EDBC /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 07201C5A2AFFF8B100C0EDBC /* RxMoya */; };
 		07DEA9C22AFFA9130039CE3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DEA9C12AFFA9130039CE3A /* AppDelegate.swift */; };
 		07DEA9C42AFFA9130039CE3A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DEA9C32AFFA9130039CE3A /* SceneDelegate.swift */; };
 		07DEA9C62AFFA9130039CE3A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DEA9C52AFFA9130039CE3A /* ViewController.swift */; };
@@ -58,6 +68,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		07201C452AFFF5C900C0EDBC /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		07201C472AFFF5E200C0EDBC /* Encodable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+.swift"; sourceTree = "<group>"; };
+		07201C4B2AFFF61300C0EDBC /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
+		07201C4D2AFFF61E00C0EDBC /* ResponseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseType.swift; sourceTree = "<group>"; };
+		07201C4F2AFFF62D00C0EDBC /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		07201C512AFFF63F00C0EDBC /* MoyaCacheablePlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaCacheablePlugin.swift; sourceTree = "<group>"; };
 		07DEA9BE2AFFA9130039CE3A /* SeeReaURL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeeReaURL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07DEA9C12AFFA9130039CE3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07DEA9C32AFFA9130039CE3A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,18 +115,51 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07201C572AFFF8B100C0EDBC /* Moya in Frameworks */,
+				07201C552AFFF8B100C0EDBC /* CombineMoya in Frameworks */,
+				07201C5B2AFFF8B100C0EDBC /* RxMoya in Frameworks */,
+				07201C592AFFF8B100C0EDBC /* ReactiveMoya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07201C442AFFF5B900C0EDBC /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				07201C452AFFF5C900C0EDBC /* APIManager.swift */,
+				07201C4F2AFFF62D00C0EDBC /* APIService.swift */,
+				07201C492AFFF5E600C0EDBC /* Data */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		07201C492AFFF5E600C0EDBC /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				07201C472AFFF5E200C0EDBC /* Encodable+.swift */,
+				07201C4B2AFFF61300C0EDBC /* RequestType.swift */,
+				07201C4D2AFFF61E00C0EDBC /* ResponseType.swift */,
+				07201C512AFFF63F00C0EDBC /* MoyaCacheablePlugin.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		07201C532AFFF8B100C0EDBC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		07DEA9B52AFFA9130039CE3A = {
 			isa = PBXGroup;
 			children = (
 				07DEA9C02AFFA9130039CE3A /* SeeReaURL */,
 				07DEA9EC2AFFA9C70039CE3A /* ShareExtension */,
 				07DEA9BF2AFFA9130039CE3A /* Products */,
+				07201C532AFFF8B100C0EDBC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -173,6 +222,7 @@
 		07DEA9EC2AFFA9C70039CE3A /* ShareExtension */ = {
 			isa = PBXGroup;
 			children = (
+				07201C442AFFF5B900C0EDBC /* Network */,
 				07DEA9ED2AFFA9C70039CE3A /* ShareViewController.swift */,
 				07DEA9EF2AFFA9C70039CE3A /* MainInterface.storyboard */,
 				07DEA9F22AFFA9C70039CE3A /* Info.plist */,
@@ -247,6 +297,12 @@
 			dependencies = (
 			);
 			name = ShareExtension;
+			packageProductDependencies = (
+				07201C542AFFF8B100C0EDBC /* CombineMoya */,
+				07201C562AFFF8B100C0EDBC /* Moya */,
+				07201C582AFFF8B100C0EDBC /* ReactiveMoya */,
+				07201C5A2AFFF8B100C0EDBC /* RxMoya */,
+			);
 			productName = ShareExtension;
 			productReference = 07DEA9EB2AFFA9C70039CE3A /* ShareExtension.appex */;
 			productType = "com.apple.product-type.app-extension";
@@ -338,7 +394,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07201C482AFFF5E200C0EDBC /* Encodable+.swift in Sources */,
+				07201C462AFFF5C900C0EDBC /* APIManager.swift in Sources */,
 				07DEA9EE2AFFA9C70039CE3A /* ShareViewController.swift in Sources */,
+				07201C4C2AFFF61300C0EDBC /* RequestType.swift in Sources */,
+				07201C502AFFF62D00C0EDBC /* APIService.swift in Sources */,
+				07201C522AFFF63F00C0EDBC /* MoyaCacheablePlugin.swift in Sources */,
+				07201C4E2AFFF61E00C0EDBC /* ResponseType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,7 +569,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = UN58VJRXVV;
+				DEVELOPMENT_TEAM = PX9ZAGMV5G;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeeReaURL/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -536,7 +598,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = UN58VJRXVV;
+				DEVELOPMENT_TEAM = PX9ZAGMV5G;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeeReaURL/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -562,7 +624,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = UN58VJRXVV;
+				DEVELOPMENT_TEAM = PX9ZAGMV5G;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ShareExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ShareExtension;
@@ -587,7 +649,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = UN58VJRXVV;
+				DEVELOPMENT_TEAM = PX9ZAGMV5G;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ShareExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ShareExtension;
@@ -651,6 +713,26 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		07201C542AFFF8B100C0EDBC /* CombineMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 07DEA9DE2AFFA9A80039CE3A /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = CombineMoya;
+		};
+		07201C562AFFF8B100C0EDBC /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 07DEA9DE2AFFA9A80039CE3A /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		07201C582AFFF8B100C0EDBC /* ReactiveMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 07DEA9DE2AFFA9A80039CE3A /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = ReactiveMoya;
+		};
+		07201C5A2AFFF8B100C0EDBC /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 07DEA9DE2AFFA9A80039CE3A /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
+		};
 		07DEA9DF2AFFA9A80039CE3A /* CombineMoya */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 07DEA9DE2AFFA9A80039CE3A /* XCRemoteSwiftPackageReference "Moya" */;
