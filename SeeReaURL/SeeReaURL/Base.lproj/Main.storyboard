@@ -215,6 +215,9 @@
                                             <fontDescription key="titleFontDescription" type="boldSystem" pointSize="15"/>
                                             <color key="baseForegroundColor" name="pointColor"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="ShowActionSheetClick:" destination="fPj-PK-qiq" eventType="touchUpInside" id="DOs-ax-BCG"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" name="boxColor"/>

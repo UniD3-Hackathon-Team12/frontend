@@ -25,6 +25,8 @@ class NQualifiedResultViewController: UIViewController {
         tableView.dataSource = self
         
         box.layer.cornerRadius = 10
+        
+        tableView.sectionHeaderTopPadding = 10
     }
     
     // 결과 제목
@@ -33,8 +35,31 @@ class NQualifiedResultViewController: UIViewController {
     
     // 신고하기 -> 액션시트
     
-    // 위험 요소 확인하기 -> 테이블 뷰
-    
+    @IBAction func ShowActionSheetClick(_ sender: Any) {
+        let actionSheet = UIAlertController(title: "신고하기", message: "구체적인 신고사유를 선택해주세요", preferredStyle: .actionSheet)
+            
+            //블로그 방문하기 버튼 - 스타일(default)
+            actionSheet.addAction(UIAlertAction(title: "사칭 계정이에요", style: .default, handler: {(ACTION:UIAlertAction) in
+                print("사칭 계정 신고")
+            }))
+        
+            actionSheet.addAction(UIAlertAction(title: "거짓 링크에요", style: .default, handler: {(ACTION:UIAlertAction) in
+                print("거짓 링크 신고")
+            }))
+        
+            actionSheet.addAction(UIAlertAction(title: "사기 당한 적이 있는 계정/링크에요", style: .default, handler: {(ACTION:UIAlertAction) in
+                print("사기 당한 적이 있는 계정/링크 신고")
+            }))
+            
+            actionSheet.addAction(UIAlertAction(title: "기타 사유", style: .default, handler: {(ACTION:UIAlertAction) in
+                print("기타 사유신고")
+            }))
+            
+            //취소 버튼 - 스타일(cancel)
+            actionSheet.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
+            
+            self.present(actionSheet, animated: true, completion: nil)
+    }    
 
 }
 
