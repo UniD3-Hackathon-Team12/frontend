@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fPj-PK-qiq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fxU-cI-Mly">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
@@ -127,15 +127,12 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="링크 이동 시 추가 위험의 가능성이 있어요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZCh-Bl-LEH">
                                 <rect key="frame" x="29.999999999999986" y="311.33333333333331" width="244.66666666666663" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-
-
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jYu-i2-dNE">
                                 <rect key="frame" x="20" y="344.33333333333331" width="353" height="130"/>
                                 <subviews>
@@ -155,16 +152,23 @@
                                         <color key="tintColor" name="pointColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="link.circle.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="redirectLink:" destination="fxU-cI-Mly" eventType="touchUpInside" id="fzX-pT-Xhh"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bi3-9R-c2U">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bi3-9R-c2U">
                                         <rect key="frame" x="323" y="92" width="20" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="20" id="5R9-ei-a4g"/>
                                             <constraint firstAttribute="height" constant="20" id="yeO-bY-ekW"/>
                                         </constraints>
                                         <color key="tintColor" name="pointColor"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" image="doc.on.doc.fill" catalog="system"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button" image="doc.on.doc.fill" catalog="system"/>
+                                        <state key="selected" image="checkmark.circle.fill" catalog="system"/>
+                                        <connections>
+                                            <action selector="copyLink:" destination="fxU-cI-Mly" eventType="touchUpInside" id="OCz-xd-Wnt"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" name="boxColor"/>
@@ -195,7 +199,7 @@
                                 <viewLayoutGuide key="frameLayoutGuide" id="FVd-mR-H9W"/>
                             </scrollView>
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="DRA-Xf-N22">
-                                <rect key="frame" x="138.66666666666666" y="792" width="116" height="26"/>
+                                <rect key="frame" x="138.66666666666666" y="792.33333333333337" width="116" height="25.666666666666629"/>
                             </pageControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="9JI-SV-8eR"/>
@@ -211,7 +215,6 @@
                             <constraint firstItem="RB5-Ut-cMV" firstAttribute="top" secondItem="9JI-SV-8eR" secondAttribute="top" id="T8B-aK-Mo4"/>
                             <constraint firstItem="RB5-Ut-cMV" firstAttribute="leading" secondItem="9JI-SV-8eR" secondAttribute="leading" constant="30" id="X9s-Dh-v1S"/>
                             <constraint firstItem="iK0-JN-X8s" firstAttribute="centerX" secondItem="tVv-TF-S9x" secondAttribute="centerX" id="aZX-t5-4UU"/>
-
                             <constraint firstItem="DRA-Xf-N22" firstAttribute="centerX" secondItem="tVv-TF-S9x" secondAttribute="centerX" id="eoB-SP-E2p"/>
                             <constraint firstItem="iK0-JN-X8s" firstAttribute="top" secondItem="RB5-Ut-cMV" secondAttribute="bottom" constant="30" id="gwJ-5M-xGG"/>
                             <constraint firstItem="FKD-is-vYG" firstAttribute="top" secondItem="jYu-i2-dNE" secondAttribute="bottom" constant="20" id="n1w-Kl-Fxa"/>
@@ -222,6 +225,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="copyBtn" destination="jYu-i2-dNE" id="WZB-AR-Rg8"/>
                         <outlet property="linkview" destination="jYu-i2-dNE" id="Orz-AU-zEH"/>
                         <outlet property="pageControl" destination="DRA-Xf-N22" id="n0a-ip-YL9"/>
                         <outlet property="scrollView" destination="Gro-CD-vLI" id="vjA-UY-qwL"/>
@@ -344,7 +348,7 @@
         </scene>
     </scenes>
     <resources>
-
+        <image name="checkmark.circle.fill" catalog="system" width="128" height="123"/>
         <image name="doc.on.doc.fill" catalog="system" width="112" height="128"/>
         <image name="exclamationmark.bubble" catalog="system" width="128" height="110"/>
         <image name="link.circle.fill" catalog="system" width="128" height="123"/>
@@ -360,7 +364,6 @@
         <namedColor name="textColor">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -11,8 +11,8 @@ class QualifiedResultViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var pageControl: UIPageControl!
-    
     @IBOutlet weak var linkview: UIView!
+    @IBOutlet weak var copyBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,8 +34,23 @@ class QualifiedResultViewController: UIViewController, UIScrollViewDelegate {
     
     // 버튼1 : 링크 이동
     
+    @IBAction func redirectLink(_ sender: Any) {
+        if let url = URL(string: "https://www.naver.com/") {
+                    UIApplication.shared.open(url, options: [:])
+                }
+    }
+    
     // 버튼2 : 링크 복사
     
+    @IBAction func copyLink(_ sender: Any) {
+        UIPasteboard.general.string = "https://www.naver.com/"
+        if let storedString = UIPasteboard.general.string {
+                    print(storedString)
+                }
+        
+        
+        
+    }
     // Tip! 문구
     
     // 사례 화면 구현 : 스크롤 뷰
