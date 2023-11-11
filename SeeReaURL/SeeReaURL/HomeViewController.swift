@@ -23,8 +23,6 @@ class HomeViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
-        
-        
     }
 
     @IBAction func segValueChanged(_ sender: Any) {
@@ -58,7 +56,6 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController: UITableViewDelegate {
-    
 }
 
 extension HomeViewController: UITableViewDataSource {
