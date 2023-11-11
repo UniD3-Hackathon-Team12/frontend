@@ -10,7 +10,6 @@ import UIKit
 class NQualifiedResultViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
-    
     @IBOutlet weak var box: UIView!
     
     
