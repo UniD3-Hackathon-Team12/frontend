@@ -54,7 +54,7 @@ class QualifiedResultViewController: UIViewController, UIScrollViewDelegate {
     // Tip! 문구
     
     // 사례 화면 구현 : 스크롤 뷰
-    var images = [#imageLiteral(resourceName: "img2"), #imageLiteral(resourceName: "img1")]
+    var images = [#imageLiteral(resourceName: "ex3"), #imageLiteral(resourceName: "ex2"), #imageLiteral(resourceName: "ex4"), #imageLiteral(resourceName: "ex5"), #imageLiteral(resourceName: "ex3")]
     var imageViews = [UIImageView]()
     
     private func addContentScrollView() {
