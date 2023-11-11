@@ -51,6 +51,16 @@ class HomeViewController: UIViewController {
         if textField.text != nil {
             print("\(textField.text!)")
         }
+        
+        // 페이지 전환
+        // 유효한 링크인 경우
+        guard let qualifiedResultVC = self.storyboard?.instantiateViewController(withIdentifier: "QualifiedResultVC") as? QualifiedResultViewController else {return}
+        self.navigationController?.pushViewController(qualifiedResultVC, animated: true)
+            
+        // 유효하지 않은 링크인 경우
+//            guard let socialLoginVC = self.storyboard?.instantiateViewController(withIdentifier: “SocialLoginVC”) as? SocialLoginViewController else {return}
+//            self.navigationController?.pushViewController(socialLoginVC, animated: true)
+        
     }
     
 }
