@@ -21,9 +21,16 @@
 		07DEA9EE2AFFA9C70039CE3A /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DEA9ED2AFFA9C70039CE3A /* ShareViewController.swift */; };
 		07DEA9F12AFFA9C70039CE3A /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07DEA9EF2AFFA9C70039CE3A /* MainInterface.storyboard */; };
 		07DEA9F52AFFA9C70039CE3A /* ShareExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 07DEA9EB2AFFA9C70039CE3A /* ShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		07DEAA012AFFC3C80039CE3A /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DEAA002AFFC3C80039CE3A /* APIService.swift */; };
+		07DEAA052AFFC7EB0039CE3A /* MoyaCacheablePlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DEAA042AFFC7EB0039CE3A /* MoyaCacheablePlugin.swift */; };
+		07DEAA082AFFC9DC0039CE3A /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DEAA072AFFC9DC0039CE3A /* RequestType.swift */; };
+		07DEAA0A2AFFC9E60039CE3A /* ResponseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DEAA092AFFC9E60039CE3A /* ResponseType.swift */; };
+		07DEAA0D2AFFCAAB0039CE3A /* Encodable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DEAA0C2AFFCAAB0039CE3A /* Encodable+.swift */; };
 		375740A52AFFBE52001B78B4 /* NQualifiedResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375740A42AFFBE52001B78B4 /* NQualifiedResultViewController.swift */; };
 		375740A72AFFBF09001B78B4 /* QualifiedResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375740A62AFFBF09001B78B4 /* QualifiedResultViewController.swift */; };
 		375740AA2AFFC1EA001B78B4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375740A92AFFC1EA001B78B4 /* HomeViewController.swift */; };
+		37E324E22AFFEB2F00BED9EE /* CauseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37E324E02AFFEB2F00BED9EE /* CauseTableViewCell.swift */; };
+		37E324E32AFFEB2F00BED9EE /* CauseTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 37E324E12AFFEB2F00BED9EE /* CauseTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,9 +71,16 @@
 		07DEA9ED2AFFA9C70039CE3A /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		07DEA9F02AFFA9C70039CE3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		07DEA9F22AFFA9C70039CE3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		07DEAA002AFFC3C80039CE3A /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		07DEAA042AFFC7EB0039CE3A /* MoyaCacheablePlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaCacheablePlugin.swift; sourceTree = "<group>"; };
+		07DEAA072AFFC9DC0039CE3A /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
+		07DEAA092AFFC9E60039CE3A /* ResponseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseType.swift; sourceTree = "<group>"; };
+		07DEAA0C2AFFCAAB0039CE3A /* Encodable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+.swift"; sourceTree = "<group>"; };
 		375740A42AFFBE52001B78B4 /* NQualifiedResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NQualifiedResultViewController.swift; sourceTree = "<group>"; };
 		375740A62AFFBF09001B78B4 /* QualifiedResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QualifiedResultViewController.swift; sourceTree = "<group>"; };
 		375740A92AFFC1EA001B78B4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		37E324E02AFFEB2F00BED9EE /* CauseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CauseTableViewCell.swift; sourceTree = "<group>"; };
+		37E324E12AFFEB2F00BED9EE /* CauseTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CauseTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +144,10 @@
 			isa = PBXGroup;
 			children = (
 				07DEA9D92AFFA9300039CE3A /* APIManager.swift */,
+				07DEAA0B2AFFCA9E0039CE3A /* Extension */,
+				07DEAA062AFFC9CB0039CE3A /* DataType */,
+				07DEAA002AFFC3C80039CE3A /* APIService.swift */,
+				07DEAA042AFFC7EB0039CE3A /* MoyaCacheablePlugin.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -145,6 +163,7 @@
 		07DEA9DD2AFFA9470039CE3A /* Result */ = {
 			isa = PBXGroup;
 			children = (
+				37E324DF2AFFEB1100BED9EE /* Cell */,
 				375740A42AFFBE52001B78B4 /* NQualifiedResultViewController.swift */,
 				375740A62AFFBF09001B78B4 /* QualifiedResultViewController.swift */,
 			);
@@ -159,6 +178,32 @@
 				07DEA9F22AFFA9C70039CE3A /* Info.plist */,
 			);
 			path = ShareExtension;
+			sourceTree = "<group>";
+		};
+		07DEAA062AFFC9CB0039CE3A /* DataType */ = {
+			isa = PBXGroup;
+			children = (
+				07DEAA072AFFC9DC0039CE3A /* RequestType.swift */,
+				07DEAA092AFFC9E60039CE3A /* ResponseType.swift */,
+			);
+			path = DataType;
+			sourceTree = "<group>";
+		};
+		07DEAA0B2AFFCA9E0039CE3A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				07DEAA0C2AFFCAAB0039CE3A /* Encodable+.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		37E324DF2AFFEB1100BED9EE /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				37E324E02AFFEB2F00BED9EE /* CauseTableViewCell.swift */,
+				37E324E12AFFEB2F00BED9EE /* CauseTableViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,6 +299,7 @@
 				07DEA9CE2AFFA9140039CE3A /* LaunchScreen.storyboard in Resources */,
 				07DEA9CB2AFFA9140039CE3A /* Assets.xcassets in Resources */,
 				07DEA9C92AFFA9130039CE3A /* Main.storyboard in Resources */,
+				37E324E32AFFEB2F00BED9EE /* CauseTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,12 +319,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				07DEA9DA2AFFA9300039CE3A /* APIManager.swift in Sources */,
+				07DEAA052AFFC7EB0039CE3A /* MoyaCacheablePlugin.swift in Sources */,
 				375740A52AFFBE52001B78B4 /* NQualifiedResultViewController.swift in Sources */,
+				07DEAA0D2AFFCAAB0039CE3A /* Encodable+.swift in Sources */,
+				07DEAA0A2AFFC9E60039CE3A /* ResponseType.swift in Sources */,
 				375740A72AFFBF09001B78B4 /* QualifiedResultViewController.swift in Sources */,
 				07DEA9C62AFFA9130039CE3A /* ViewController.swift in Sources */,
 				07DEA9C22AFFA9130039CE3A /* AppDelegate.swift in Sources */,
 				375740AA2AFFC1EA001B78B4 /* HomeViewController.swift in Sources */,
+				07DEAA012AFFC3C80039CE3A /* APIService.swift in Sources */,
+				37E324E22AFFEB2F00BED9EE /* CauseTableViewCell.swift in Sources */,
 				07DEA9C42AFFA9130039CE3A /* SceneDelegate.swift in Sources */,
+				07DEAA082AFFC9DC0039CE3A /* RequestType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -455,6 +507,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UN58VJRXVV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeeReaURL/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -483,6 +536,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UN58VJRXVV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeeReaURL/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -508,6 +562,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UN58VJRXVV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ShareExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ShareExtension;
@@ -532,6 +587,7 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UN58VJRXVV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ShareExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = ShareExtension;
