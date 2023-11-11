@@ -10,7 +10,7 @@ import UIKit
 struct CauseDataModel{
     let symbolImageName: String
     var symbolImage: UIImage? {
-        return UIImage(named: symbolImageName)
+        return UIImage(systemName: symbolImageName)
     }
     let causeTitle: String
 }
@@ -33,16 +33,16 @@ class CauseTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        // Cell 간격 조정
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 10, left: 6, bottom: 10, right: 6))
+      }
+    
     func setData(_ causeData: CauseDataModel){
         symbolImg.image = causeData.symbolImage
         textInfo.text = causeData.causeTitle
     }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        // Cell 간격 조정
-        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 6, left: 6, bottom: 6, right: 6))
-      }
     
 }
 
