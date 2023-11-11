@@ -12,10 +12,19 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var tableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setTextFieldStyle()
+        
+        let nib = UINib(nibName: RecentlyReportedTableViewCell.identifier, bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: RecentlyReportedTableViewCell.identifier)
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        
     }
 
     @IBAction func segValueChanged(_ sender: Any) {
@@ -46,4 +55,21 @@ class HomeViewController: UIViewController {
         }
     }
     
+}
+
+extension HomeViewController: UITableViewDelegate {
+    
+}
+
+extension HomeViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: RecentlyReportedTableViewCell.identifier, for: indexPath) as? RecentlyReportedTableViewCell else { return UITableViewCell() }
+        cell.setData(RecentlyReportedDataModel.sampleData[indexPath.row])
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return RecentlyReportedDataModel.sampleData.count
+    }
 }
