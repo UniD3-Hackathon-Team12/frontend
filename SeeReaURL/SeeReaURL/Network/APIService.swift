@@ -9,7 +9,15 @@ import Foundation
 import Moya
 
 enum APIService {
-	case getMainResult(parameter: [String: Any])
+
+	case getHotAccounts
+	case getHotURLs
+	
+	case getURLValidation(parameter: [String: Any])
+	case getAccountValidation(parameter: [String: Any])
+	case postSave(parameter: [String: Any])
+	case postReport(parameter:[String: Any])
+	
 }
 
 extension APIService: TargetType {
@@ -19,21 +27,52 @@ extension APIService: TargetType {
 	
 	var path: String {
 		switch self {
-		case .getMainResult:
-			return "fraud/checkUrl"
+
+		case .getHotAccounts:
+			return "fraud/account/view"
+		case .getHotURLs:
+			return "fraud/url/view"
+		case .getURLValidation:
+			return "fraud/check"
+		case .getAccountValidation:
+			return "fraud/checkAccount"
+		case .postSave:
+			return "fraud"
+		case .postReport:
+			return "fraud/report/url"
 		}
 	}
 	
 	var method: Moya.Method {
 		switch self {
-		case .getMainResult:
+		case .getHotAccounts:
 			return .get
+		case .getHotURLs:
+			return .get
+		case .getURLValidation:
+			return .get
+		case .getAccountValidation:
+			return .get
+		case .postSave:
+			return .post
+		case .postReport:
+			return .post
 		}
 	}
 	
 	var task: Moya.Task {
-		switch self{
-		case .getMainResult(let parameter):
+		switch self {
+		case .getHotAccounts:
+			return .requestPlain
+		case .getHotURLs:
+			return .requestPlain
+		case .getURLValidation(let parameter):
+			return .requestParameters(parameters: parameter, encoding: URLEncoding.queryString)
+		case .getAccountValidation(parameter: let parameter):
+			return .requestParameters(parameters: parameter, encoding: URLEncoding.queryString)
+		case .postSave(let parameter):
+			return .requestParameters(parameters: parameter, encoding: URLEncoding.queryString)
+		case .postReport(parameter: let parameter):
 			return .requestParameters(parameters: parameter, encoding: URLEncoding.queryString)
 		}
 	}
