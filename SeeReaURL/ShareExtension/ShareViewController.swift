@@ -14,7 +14,8 @@ class ShareViewController: UIViewController {
 	
 	let apiManager = DefaultAPIManager()
 	var urlString: String = ""
-	var resultString: String = "으아아"
+	var resultString: String = ""
+	var imageView: UIImageView!
 	
 	var sharingData:NSExtensionContext?
 	
@@ -32,9 +33,29 @@ class ShareViewController: UIViewController {
 		super.viewDidLoad()
 		setURLString()
 		self.view.backgroundColor = .black
-		self.navigationItem.title = "공유"
+		self.navigationItem.title = "링크 위험성 확인"
 		self.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.cancelButtonTapped(_:)))
 		self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(self.shareButtonTapped(_:)))
+		
+		// SF Image questionmark.circle.fill 추가
+		imageView = UIImageView(image: UIImage(systemName: "questionmark.circle.fill"))
+		imageView.isUserInteractionEnabled = true
+		imageView.frame = CGRect(x: 0, y: 0, width: 180, height: 180)
+
+		imageView.center = view.center
+		let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
+		imageView.addGestureRecognizer(tapGesture)
+		view.addSubview(imageView)
+		
+		// 이미지뷰를 화면 중앙에 배치
+		imageView.translatesAutoresizingMaskIntoConstraints = false
+		NSLayoutConstraint.activate([
+			imageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+			imageView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+			imageView.widthAnchor.constraint(equalToConstant: 180), // 원하는 너비로 조절
+			imageView.heightAnchor.constraint(equalToConstant: 180) // 원하는 높이로 조절
+		])
+		
 	}
 	
 	override func viewWillAppear(_ animated: Bool) {
@@ -122,6 +143,33 @@ class ShareViewController: UIViewController {
 				}
 			}
 	}
+	
+	@objc func imageTapped() {
+		// 이미지 회전 애니메이션 시작
+		rotateImage()
+
+		// 3초 후에 이미지 변경
+		DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+			// 변수에 따라 이미지 변경
+			let isSuccess = true // 또는 false로 설정
+			self.imageView.layer.removeAllAnimations()
+			if isSuccess {
+				self.imageView.image = UIImage(systemName: "checkmark.circle.fill")
+			} else {
+				self.imageView.image = UIImage(systemName: "xmark.circle.fill")
+			}
+		}
+	}
+
+	func rotateImage() {
+		let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+		rotationAnimation.toValue = NSNumber(value: Double.pi * 2.0)
+		rotationAnimation.duration = 3.0
+		rotationAnimation.isCumulative = true
+		rotationAnimation.repeatCount = .infinity
+		imageView.layer.add(rotationAnimation, forKey: "rotationAnimation")
+	}
+
 	
 }
 
