@@ -38,6 +38,7 @@
 		07DEAA082AFFC9DC0039CE3A /* RequestType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DEAA072AFFC9DC0039CE3A /* RequestType.swift */; };
 		07DEAA0A2AFFC9E60039CE3A /* ResponseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DEAA092AFFC9E60039CE3A /* ResponseType.swift */; };
 		07DEAA0D2AFFCAAB0039CE3A /* Encodable+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DEAA0C2AFFCAAB0039CE3A /* Encodable+.swift */; };
+		07F6D9842B00440000FA52D7 /* CindyType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F6D9832B00440000FA52D7 /* CindyType.swift */; };
 		375740A52AFFBE52001B78B4 /* NQualifiedResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375740A42AFFBE52001B78B4 /* NQualifiedResultViewController.swift */; };
 		375740A72AFFBF09001B78B4 /* QualifiedResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375740A62AFFBF09001B78B4 /* QualifiedResultViewController.swift */; };
 		375740AA2AFFC1EA001B78B4 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 375740A92AFFC1EA001B78B4 /* HomeViewController.swift */; };
@@ -98,6 +99,7 @@
 		07DEAA072AFFC9DC0039CE3A /* RequestType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestType.swift; sourceTree = "<group>"; };
 		07DEAA092AFFC9E60039CE3A /* ResponseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseType.swift; sourceTree = "<group>"; };
 		07DEAA0C2AFFCAAB0039CE3A /* Encodable+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+.swift"; sourceTree = "<group>"; };
+		07F6D9832B00440000FA52D7 /* CindyType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CindyType.swift; sourceTree = "<group>"; };
 		375740A42AFFBE52001B78B4 /* NQualifiedResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NQualifiedResultViewController.swift; sourceTree = "<group>"; };
 		375740A62AFFBF09001B78B4 /* QualifiedResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QualifiedResultViewController.swift; sourceTree = "<group>"; };
 		375740A92AFFC1EA001B78B4 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 			children = (
 				07DEAA072AFFC9DC0039CE3A /* RequestType.swift */,
 				07DEAA092AFFC9E60039CE3A /* ResponseType.swift */,
+				07F6D9832B00440000FA52D7 /* CindyType.swift */,
 			);
 			path = DataTypeNetWork;
 			sourceTree = "<group>";
@@ -396,6 +399,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07DEA9DA2AFFA9300039CE3A /* APIManager.swift in Sources */,
+				07F6D9842B00440000FA52D7 /* CindyType.swift in Sources */,
 				07DEAA052AFFC7EB0039CE3A /* MoyaCacheablePlugin.swift in Sources */,
 				375740A52AFFBE52001B78B4 /* NQualifiedResultViewController.swift in Sources */,
 				07DEAA0D2AFFCAAB0039CE3A /* Encodable+.swift in Sources */,
