@@ -33,12 +33,6 @@ class CauseTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-
-        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 30.0, left: 16, bottom: 30, right: 16))
-    }
-    
     func setData(_ causeData: CauseDataModel){
         symbolImg.image = causeData.symbolImage
         textInfo.text = causeData.causeTitle
