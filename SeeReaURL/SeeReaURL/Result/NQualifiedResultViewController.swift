@@ -9,10 +9,14 @@ import UIKit
 
 class NQualifiedResultViewController: UIViewController {
 
+    @IBOutlet weak var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // table cell 등록
+        let nib = UINib(nibName: CauseTableViewCell.identifier, bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: CauseTableViewCell.identifier)
     }
     
     // 결과 제목
