@@ -18,6 +18,7 @@
 		07201C592AFFF8B100C0EDBC /* ReactiveMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 07201C582AFFF8B100C0EDBC /* ReactiveMoya */; };
 		07201C5B2AFFF8B100C0EDBC /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 07201C5A2AFFF8B100C0EDBC /* RxMoya */; };
 		07201C5D2B0004B100C0EDBC /* ShareResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07201C5C2B0004B100C0EDBC /* ShareResultViewController.swift */; };
+		07201C5F2B000E2E00C0EDBC /* EntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07201C5E2B000E2E00C0EDBC /* EntryViewController.swift */; };
 		07DEA9C22AFFA9130039CE3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DEA9C12AFFA9130039CE3A /* AppDelegate.swift */; };
 		07DEA9C42AFFA9130039CE3A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DEA9C32AFFA9130039CE3A /* SceneDelegate.swift */; };
 		07DEA9C62AFFA9130039CE3A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07DEA9C52AFFA9130039CE3A /* ViewController.swift */; };
@@ -76,6 +77,7 @@
 		07201C4F2AFFF62D00C0EDBC /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		07201C512AFFF63F00C0EDBC /* MoyaCacheablePlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaCacheablePlugin.swift; sourceTree = "<group>"; };
 		07201C5C2B0004B100C0EDBC /* ShareResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareResultViewController.swift; sourceTree = "<group>"; };
+		07201C5E2B000E2E00C0EDBC /* EntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewController.swift; sourceTree = "<group>"; };
 		07DEA9BE2AFFA9130039CE3A /* SeeReaURL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeeReaURL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07DEA9C12AFFA9130039CE3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07DEA9C32AFFA9130039CE3A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 			children = (
 				07201C442AFFF5B900C0EDBC /* Network */,
 				07DEA9ED2AFFA9C70039CE3A /* ShareViewController.swift */,
+				07201C5E2B000E2E00C0EDBC /* EntryViewController.swift */,
 				07201C5C2B0004B100C0EDBC /* ShareResultViewController.swift */,
 				07DEA9EF2AFFA9C70039CE3A /* MainInterface.storyboard */,
 				07DEA9F22AFFA9C70039CE3A /* Info.plist */,
@@ -402,6 +405,7 @@
 				07DEA9EE2AFFA9C70039CE3A /* ShareViewController.swift in Sources */,
 				07201C5D2B0004B100C0EDBC /* ShareResultViewController.swift in Sources */,
 				07201C4C2AFFF61300C0EDBC /* RequestType.swift in Sources */,
+				07201C5F2B000E2E00C0EDBC /* EntryViewController.swift in Sources */,
 				07201C502AFFF62D00C0EDBC /* APIService.swift in Sources */,
 				07201C522AFFF63F00C0EDBC /* MoyaCacheablePlugin.swift in Sources */,
 				07201C4E2AFFF61E00C0EDBC /* ResponseType.swift in Sources */,
