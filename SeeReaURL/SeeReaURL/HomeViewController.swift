@@ -8,22 +8,27 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var searchButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        setTextFieldStyle()
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setTextFieldStyle() {
+        textField.borderStyle = .roundedRect
+        textField.layer.borderColor = UIColor(named: "pointColor")?.cgColor
+        textField.layer.cornerRadius = 10
+        textField.layer.borderWidth = 1.0
     }
-    */
-
+    
+    @IBAction func searchButtonClicked(_ sender: UIButton) {
+        if textField.text != nil {
+            print("\(textField.text!)")
+        }
+    }
+    
 }
