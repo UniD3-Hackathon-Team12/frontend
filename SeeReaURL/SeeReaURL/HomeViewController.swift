@@ -14,6 +14,9 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     
+    var vc = RecentlyReportedTableViewCell()
+    var apiData: [String] = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setTextFieldStyle()
@@ -26,7 +29,15 @@ class HomeViewController: UIViewController {
         
         // 네비게이션 바 해제
         self.navigationController?.navigationBar.isHidden = true;
+        
+        // API
+        vc.delegate = self
+        vc.fetchHotURLs()
+        print("completed")
+        
     }
+
+
 
     @IBAction func segValueChanged(_ sender: Any) {
         switch segmentedControl.selectedSegmentIndex {
@@ -68,18 +79,22 @@ class HomeViewController: UIViewController {
     
 }
 
-extension HomeViewController: UITableViewDelegate {
+extension HomeViewController: UITableViewDelegate, SendStringData {
+    func sendData(mydata: [String]) {
+        apiData = mydata
+    }
+    
 }
 
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: RecentlyReportedTableViewCell.identifier, for: indexPath) as? RecentlyReportedTableViewCell else { return UITableViewCell() }
-        cell.setData(RecentlyReportedDataModel.sampleData[indexPath.row])
+        cell.setData(apiData[indexPath.row])
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return RecentlyReportedDataModel.sampleData.count
+        return apiData.count
     }
 }
