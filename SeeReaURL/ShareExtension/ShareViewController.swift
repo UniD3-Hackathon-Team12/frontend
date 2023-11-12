@@ -41,7 +41,7 @@ class ShareViewController: UIViewController {
 		imageView = UIImageView(image: UIImage(systemName: "questionmark.circle.fill"))
 		imageView.isUserInteractionEnabled = true
 		imageView.frame = CGRect(x: 0, y: 0, width: 180, height: 180)
-
+		imageView.tintColor = UIColor.yellow
 		imageView.center = view.center
 		let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
 		imageView.addGestureRecognizer(tapGesture)
@@ -115,7 +115,7 @@ class ShareViewController: UIViewController {
 	}
 	
 	func hideExtensionWithCompletionHandler(completion: @escaping (Bool) -> Void) {
-		UIView.animate(withDuration: 0.3, animations: {
+		UIView.animate(withDuration: 0.15, animations: {
 			self.navigationController!.view.transform = CGAffineTransform(translationX: 0, y: self.navigationController!.view.frame.size.height)
 		}, completion: completion)
 	}
@@ -164,7 +164,7 @@ class ShareViewController: UIViewController {
 	func rotateImage() {
 		let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
 		rotationAnimation.toValue = NSNumber(value: Double.pi * 2.0)
-		rotationAnimation.duration = 3.0
+		rotationAnimation.duration = 1.5
 		rotationAnimation.isCumulative = true
 		rotationAnimation.repeatCount = .infinity
 		imageView.layer.add(rotationAnimation, forKey: "rotationAnimation")
