@@ -26,11 +26,9 @@ class HomeViewController: UIViewController {
             present(alert, animated: true, completion: nil)
         }
     }
-
-    struct AccountCheckAlert {
-        let icon: String
-        let message: String
-    }
+    
+    var vc = RecentlyReportedTableViewCell()
+    var apiData: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,9 +41,15 @@ class HomeViewController: UIViewController {
         tableView.dataSource = self
 
         // 네비게이션 바 해제
-        self.navigationController?.navigationBar.isHidden = true
-
+        self.navigationController?.navigationBar.isHidden = true;
+        
+        // API
+        vc.delegate = self
+        vc.fetchHotURLs()
+        print("completed")
     }
+
+
 
     @IBAction func segValueChanged(_ sender: Any) {
         switch segmentedControl.selectedSegmentIndex {
@@ -110,19 +114,24 @@ class HomeViewController: UIViewController {
 
 }
 
-extension HomeViewController: UITableViewDelegate {
 
+extension HomeViewController: UITableViewDelegate, SendStringData {
+    func sendData(mydata: [String]) {
+        apiData = mydata
+    }
+    
 }
 
 extension HomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: RecentlyReportedTableViewCell.identifier, for: indexPath) as? RecentlyReportedTableViewCell else { return UITableViewCell() }
-        cell.setData(RecentlyReportedDataModel.sampleData[indexPath.row])
 
+        cell.setData(apiData[indexPath.row])
+        
         return cell
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return RecentlyReportedDataModel.sampleData.count
+        return apiData.count
     }
 }

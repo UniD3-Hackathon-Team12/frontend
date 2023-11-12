@@ -7,25 +7,30 @@
 
 import UIKit
 
-struct RecentlyReportedDataModel {
-    let title: String
+//struct RecentlyReportedDataModel {
+//    let urlString: String
+//}
+
+protocol SendStringData{
+    func sendData(mydata: [String])
 }
 
 class RecentlyReportedTableViewCell: UITableViewCell {
     static let identifier = "RecentlyReportedTableViewCell"
     
-    @IBOutlet weak var url: UILabel!
+    var resourceData: [String] = []
+    var delegate: SendStringData?
+    let apiManager = DefaultAPIManager()
     
+    @IBOutlet weak var url: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
         self.contentView.layer.cornerRadius = 10;
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
     override func layoutSubviews() {
@@ -34,15 +39,22 @@ class RecentlyReportedTableViewCell: UITableViewCell {
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: 5, left: 6, bottom: 5, right: 6))
       }
     
-    func setData(_ reportedDataModel: RecentlyReportedDataModel){
-        url.text = reportedDataModel.title
+    
+    func fetchHotURLs() {
+        Task {
+            do {
+                let response = try await apiManager.getHotURLs()
+//                for index in 0..<response.count {
+//                    resourceData.append(RecentlyReportedDataModel(urlString: response[index]))
+//                }
+                delegate?.sendData(mydata: response)
+                print("completedFetcg")
+            } catch {
+            }
+        }
     }
     
-}
-
-extension RecentlyReportedDataModel {
-    static let sampleData: [RecentlyReportedDataModel] = [
-        RecentlyReportedDataModel(title: "https://fake-url.com"),
-    RecentlyReportedDataModel(title: "open-kakao.cam/saiof3"),
-    RecentlyReportedDataModel(title: "xcvghth.cam/1fs")]
+    func setData(_ resourceURL: String){
+        url.text = resourceURL
+    }
 }
