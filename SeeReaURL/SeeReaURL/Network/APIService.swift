@@ -33,7 +33,7 @@ extension APIService: TargetType {
 		case .getHotURLs:
 			return "fraud/url/view"
 		case .getURLValidation:
-			return "fraud/check"
+			return "fraud/checkUrl"
 		case .getAccountValidation:
 			return "fraud/checkAccount"
 		case .postSave:

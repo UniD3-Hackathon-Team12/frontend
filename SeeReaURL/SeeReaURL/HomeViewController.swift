@@ -17,16 +17,24 @@ class HomeViewController: UIViewController {
     let apiManager = DefaultAPIManager()
     var segmentState = 1 // 1: url, 2: account
 
+    var isValidURL: Bool = false {
+        didSet {
+            let alert = UIAlertController(title: "URL 유효성 확인 결과", message: "\(isValidURL ? "\n 정상적인 URL입니다." : "\n유효하지 않은 URL입니다.")", preferredStyle: .alert)
+            let close = UIAlertAction(title: "Close", style: .destructive, handler: nil)
+            alert.addAction(close)
+            present(alert, animated: true, completion: nil)
+        }
+    }
+
     var isValidAccount: Bool = false {
-        didSet(oldValue) {
-            print(oldValue)
+        didSet {
             let alert = UIAlertController(title: "사칭계정 확인 결과", message: "\(isValidAccount ? "\n정상적인 계정입니다." : "\n유효하지 않은 계정입니다.")", preferredStyle: .alert)
             let close = UIAlertAction(title: "Close", style: .destructive, handler: nil)
             alert.addAction(close)
             present(alert, animated: true, completion: nil)
         }
     }
-    
+
     var vc = RecentlyReportedTableViewCell()
     var apiData: [String] = []
 
@@ -41,8 +49,8 @@ class HomeViewController: UIViewController {
         tableView.dataSource = self
 
         // 네비게이션 바 해제
-        self.navigationController?.navigationBar.isHidden = true;
-        
+        self.navigationController?.navigationBar.isHidden = true
+
         // API
         vc.delegate = self
         vc.fetchHotURLs()
@@ -81,22 +89,36 @@ class HomeViewController: UIViewController {
 
             if segmentState == 1 {
                 // url 유효성 검사
+                checkURL(url: textField.text!)
 
                 // 페이지 전환
                 // 유효한 링크인 경우
-                guard let qualifiedResultVC = self.storyboard?.instantiateViewController(withIdentifier: "QualifiedResultVC") as? QualifiedResultViewController else { return }
-                self.navigationController?.pushViewController(qualifiedResultVC, animated: true)
+                if isValidURL {
+                    guard let qualifiedResultVC = self.storyboard?.instantiateViewController(withIdentifier: "QualifiedResultVC") as? QualifiedResultViewController else { return }
+                    self.navigationController?.pushViewController(qualifiedResultVC, animated: true)
+                } else {
+                    // 유효하지 않은 링크인 경우
+                    guard let nqualifiedResultVC = self.storyboard?.instantiateViewController(withIdentifier: "NQualifiedResultVC") as? NQualifiedResultViewController else { return }
+                    self.navigationController?.pushViewController(nqualifiedResultVC, animated: true)
 
-                // 유효하지 않은 링크인 경우
-                //            guard let socialLoginVC = self.storyboard?.instantiateViewController(withIdentifier: “SocialLoginVC”) as? SocialLoginViewController else {return}
-                //            self.navigationController?.pushViewController(socialLoginVC, animated: true)
-
+                }
 
             } else {
                 checkAccount(account: textField.text!)
             }
 
             textField.text = ""
+        }
+    }
+
+    func checkURL(url: String) {
+        Task {
+            do {
+                let response = try await apiManager.getURLValidation(url: url)
+                isValidURL = response.0.isSafe
+            } catch {
+
+            }
         }
     }
 
@@ -111,7 +133,6 @@ class HomeViewController: UIViewController {
             }
         }
     }
-
 }
 
 
@@ -119,7 +140,7 @@ extension HomeViewController: UITableViewDelegate, SendStringData {
     func sendData(mydata: [String]) {
         apiData = mydata
     }
-    
+
 }
 
 extension HomeViewController: UITableViewDataSource {
@@ -127,7 +148,7 @@ extension HomeViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: RecentlyReportedTableViewCell.identifier, for: indexPath) as? RecentlyReportedTableViewCell else { return UITableViewCell() }
 
         cell.setData(apiData[indexPath.row])
-        
+
         return cell
     }
 
