@@ -15,6 +15,7 @@ class QualifiedResultViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var copyBtn: UIButton!
     @IBOutlet weak var linkURL: UILabel!
     
+    var receiveText: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +28,8 @@ class QualifiedResultViewController: UIViewController, UIScrollViewDelegate {
         self.scrollView.layer.cornerRadius = 10
         
         // 링크 보여주기
-        linkURL.text = "주소 변수"
+        self.linkURL.text = receiveText
+
         
         
     }

@@ -16,8 +16,9 @@ class HomeViewController: UIViewController {
 
     let apiManager = DefaultAPIManager()
     var segmentState = 1 // 1: url, 2: account
+    
 
-    var isValidURL: Bool = false {
+    var isValidURL: Bool = true {
         didSet {
             let alert = UIAlertController(title: "URL 유효성 확인 결과", message: "\(isValidURL ? "\n 정상적인 URL입니다." : "\n유효하지 않은 URL입니다.")", preferredStyle: .alert)
             let close = UIAlertAction(title: "Close", style: .destructive, handler: nil)
@@ -55,6 +56,7 @@ class HomeViewController: UIViewController {
         vc.delegate = self
         vc.fetchHotURLs()
         print("completed")
+        
     }
 
 
@@ -95,10 +97,12 @@ class HomeViewController: UIViewController {
                 // 유효한 링크인 경우
                 if isValidURL {
                     guard let qualifiedResultVC = self.storyboard?.instantiateViewController(withIdentifier: "QualifiedResultVC") as? QualifiedResultViewController else { return }
+                    qualifiedResultVC.receiveText = textField.text
                     self.navigationController?.pushViewController(qualifiedResultVC, animated: true)
                 } else {
                     // 유효하지 않은 링크인 경우
                     guard let nqualifiedResultVC = self.storyboard?.instantiateViewController(withIdentifier: "NQualifiedResultVC") as? NQualifiedResultViewController else { return }
+                    nqualifiedResultVC.receiveText = textField.text
                     self.navigationController?.pushViewController(nqualifiedResultVC, animated: true)
 
                 }
